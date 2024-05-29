@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginPage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/Login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/outfit_bold"
+            android:gravity="center"
+            android:text="LOGIN GOFFEE"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Login"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/outfit_regular"
+            android:text="Email"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewEmail"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="@font/outfit_regular"
+            android:hint="Masukan email"
+            android:inputType="textEmailAddress"
+            android:padding="12dp" />
+
+        <TextView
+            android:id="@+id/textViewPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextEmail"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/outfit_regular"
+            android:text="Password"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewPassword"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_background"
+            android:fontFamily="@font/outfit_regular"
+            android:hint="Enter your password"
+            android:inputType="textPassword"
+            android:padding="12dp" />
+
+        <ImageButton
+            android:id="@+id/btnShowHidePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/editTextPassword"
+            android:layout_alignBottom="@id/editTextPassword"
+            android:layout_marginEnd="13dp"
+
+            android:layout_marginBottom="13dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_show_password" />
+
+        <TextView
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextPassword"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/outfit_bold"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="Login"
+            android:textAllCaps="false" />
+
+        <LinearLayout
+            android:id="@+id/separator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnLogin"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:background="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Daftar Disini"
+                android:textAlignment="center"
+                android:textColor="@color/black" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:background="@color/black" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/separator"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/outfit_bold"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="Registrasi"
+            android:textAllCaps="false" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
