@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
 
         startActivity(intent)
-        finish() // Close MainActivity so user can't return to it
+        finish()
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
