@@ -6,6 +6,6 @@ data class MenuOrder(
     val idHistory: Int,
     val menu_name: String,
     val variant: String,
-    val price: Long,
+    val price: Int,
     val amount: Int
 )

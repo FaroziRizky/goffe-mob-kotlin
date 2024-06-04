@@ -23,7 +23,7 @@ class MenuOrderAdapter(private val menuOrders: List<MenuOrder>) :
         Log.d("Error Cuy", "onBindViewHolder: ${menuOrder.menu_name}")
         holder.cartItemName.text = menuOrder.menu_name
         holder.cartItemVariant.text = menuOrder.variant
-        holder.cartItemPrice.text = "Rp ${formatPrice(menuOrder.price)}"
+        holder.cartItemPrice.text = "Rp ${formatPrice(menuOrder.price.toLong())}"
         holder.cartItemAmount.text = menuOrder.amount.toString()
     }
 
