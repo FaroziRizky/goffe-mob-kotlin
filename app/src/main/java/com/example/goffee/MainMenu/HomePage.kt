@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.goffee.ApiService.ApiService
 import com.example.goffee.ApiService.TokenManager
 import com.example.goffee.LoginPage
+import com.example.goffee.MainPage
 import com.example.goffee.R
 import com.example.goffee.api.RetrofitInstance
 
@@ -28,12 +29,14 @@ class HomePage : Fragment() {
     private lateinit var recommendedIceProductsAdapter: RecommendedIceProductsAdapter
     private lateinit var recommendedHotProductsAdapter: RecommendedHotProductsAdapter
     private lateinit var nama: TextView
+    private lateinit var menuAll: TextView
+    private lateinit var menuIce: TextView
+    private lateinit var menuHot: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home_page, container, false)
 
         recommendedProductsRecyclerView = view.findViewById(R.id.recommendedProductsRecyclerView)
@@ -51,7 +54,21 @@ class HomePage : Fragment() {
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         nama = view.findViewById(R.id.user_name)
 
+        menuAll = view.findViewById(R.id.menuAll)
+        menuIce = view.findViewById(R.id.menuIce)
+        menuHot = view.findViewById(R.id.menuHot)
 
+        menuAll.setOnClickListener {
+            navigateToMenuPage(0)
+        }
+
+        menuIce.setOnClickListener {
+            navigateToMenuPage(0)
+        }
+
+        menuHot.setOnClickListener {
+            navigateToMenuPage(1)
+        }
 
         fetchRecommendedProducts()
         fetchRecommendedIceProducts()
@@ -59,6 +76,18 @@ class HomePage : Fragment() {
         fetchProfile()
 
         return view
+    }
+
+    private fun navigateToMenuPage(tabIndex: Int) {
+        val menuPage = MenuPage()
+        val bundle = Bundle()
+        bundle.putInt("TAB_INDEX", tabIndex)
+        menuPage.arguments = bundle
+        (activity as? MainPage)?.setBottomNavigationSelectedItem(R.id.menu)
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.frag_container_nav, menuPage)
+            .addToBackStack(null)
+            .commit()
     }
 
     private fun fetchRecommendedProducts() {

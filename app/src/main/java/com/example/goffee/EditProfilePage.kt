@@ -26,7 +26,7 @@ class EditProfilePage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_edit_profile_page2)
+        setContentView(R.layout.activity_edit_profile_page)
 
         // Inisialisasi view
         editTextFullName = findViewById(R.id.editTextFullName)

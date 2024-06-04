@@ -45,6 +45,9 @@ class MenuPage : Fragment() {
         viewPager.adapter = fragmentAdapter
         tabs.setupWithViewPager(viewPager)
 
+        val tabIndex = arguments?.getInt("TAB_INDEX", 0) ?: 0
+        viewPager.currentItem = tabIndex
+
         setupTabIcons()
     }
 

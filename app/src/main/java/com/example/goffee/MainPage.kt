@@ -13,18 +13,19 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar
 
 class MainPage : AppCompatActivity() {
     val fragment = HomePage()
+    private lateinit var menu_bottom: ChipNavigationBar
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_page)
         openMainFragment()
         supportActionBar?.hide()
 
-        var menu_bottom = findViewById<ChipNavigationBar>(R.id.bottom_navigation)
+        menu_bottom = findViewById(R.id.bottom_navigation)
         menu_bottom.setItemSelected(R.id.home)
 
         menu_bottom.setOnItemSelectedListener {
             when (it) {
-
                 R.id.home -> {
                     openMainFragment()
                 }
@@ -33,14 +34,12 @@ class MainPage : AppCompatActivity() {
                     val menuPage = MenuPage()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frag_container_nav, menuPage).commit()
-
                 }
 
                 R.id.pesanan -> {
                     val instanceFragment = OrderPage()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frag_container_nav, instanceFragment).commit()
-//                    menu_bottom.dismissBadge(R.id.menu_instance)
                 }
 
                 R.id.account -> {
@@ -56,5 +55,9 @@ class MainPage : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.frag_container_nav, fragment)
         transaction.commit()
+    }
+
+    fun setBottomNavigationSelectedItem(itemId: Int) {
+        menu_bottom.setItemSelected(itemId)
     }
 }

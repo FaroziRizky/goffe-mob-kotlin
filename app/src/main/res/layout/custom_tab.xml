@@ -5,8 +5,6 @@
     android:orientation="horizontal"
     android:gravity="center">
 
-
-
     <ImageView
         android:id="@+id/tabIcon"
         android:layout_width="24dp"

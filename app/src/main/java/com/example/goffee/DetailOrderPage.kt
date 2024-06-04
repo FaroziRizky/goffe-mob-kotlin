@@ -343,7 +343,7 @@ class DetailOrderPage : AppCompatActivity() {
                     override fun onFailure(call: Call<ApiService.detailResponse>, t: Throwable) {
                         Toast.makeText(
                             this@DetailOrderPage,
-                            "An error occurred",
+                            "An error occurred $t",
                             Toast.LENGTH_SHORT
                         )
                             .show()

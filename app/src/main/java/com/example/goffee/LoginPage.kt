@@ -43,7 +43,7 @@ class LoginPage : AppCompatActivity() {
         btnLogin = findViewById(R.id.btnLogin)
         btnRegister = findViewById(R.id.btnRegister)
 
-        emailEditText.setText("budi@example.com")
+        emailEditText.setText("joshua@gmail.com")
         passwordEditText.setText("1")
 
         btnLogin.setOnClickListener {
